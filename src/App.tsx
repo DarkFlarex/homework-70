@@ -12,7 +12,7 @@ const App = () => {
           <header>
               <Toolbar/>
           </header>
-          <main>
+          <main className='container'>
               <Routes>
                   <Route path="/" element={<ContactsList/>}/>
                   <Route path="/new-contact" element={<ContactForm/>}/>
