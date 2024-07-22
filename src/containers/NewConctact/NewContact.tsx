@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import ContactForm from "../../compontents/ContactForm/ContactForm";
-import {createContact} from "../../store/contactsThunks";
 import {selectCreateContactLoading} from "../../store/contactsSlice";
+import {createContact} from "../../store/contactsThunks";
 
 const NewContact: React.FC = () => {
     const navigate = useNavigate();
