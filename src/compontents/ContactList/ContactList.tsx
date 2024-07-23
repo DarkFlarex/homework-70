@@ -34,7 +34,7 @@ const ContactList: React.FC = () => {
             )}
             {contactsLoading ? (
                 <Spinner />
-            ) : (
+            ) : contacts.length > 0 ? (
                 contacts.map((contact) => (
                     <ContactListItem
                         key={contact.id}
@@ -42,6 +42,8 @@ const ContactList: React.FC = () => {
                         onClick={() => handleContactClick(contact)}
                     />
                 ))
+            ) : (
+                <h5>Контакты пусты, заполните их</h5>
             )}
         </>
     );

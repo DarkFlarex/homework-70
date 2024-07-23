@@ -122,7 +122,7 @@ const ContactForm:React.FC<Props> = ({
                     >
                         Back to Contacts
                     </NavLink>
-                </div>
+            </div>
         </form>
     );
 };

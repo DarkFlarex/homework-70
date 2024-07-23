@@ -1,0 +1,11 @@
+body {
+    background-color: slategray;
+    margin: 0;
+    padding: 0;
+}
+
+.container-main{
+    height: 92vh;
+    margin: 0 auto;
+    padding: 0 15px;
+}

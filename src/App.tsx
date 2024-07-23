@@ -13,7 +13,7 @@ const App = () => {
           <header>
               <Toolbar/>
           </header>
-          <main className='container'>
+          <main className='container container-main bg-secondary pt-5'>
               <Routes>
                   <Route path="/" element={<ContactList/>}/>
                   <Route path="/new-contact" element={<NewContact/>}/>
