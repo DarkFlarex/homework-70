@@ -9,7 +9,7 @@ interface Props {
     isLoading?: boolean;
 }
 
-const initialState: ContactMutation = {
+const emptyState: ContactMutation = {
     name: '',
     phone: '',
     email: '',
@@ -21,13 +21,16 @@ const ContactForm:React.FC<Props> = ({
     existingContact,
     isLoading,
 }) => {
+    const initialState: ContactMutation = existingContact
+        ? { ...existingContact }
+        : emptyState;
+
     const [contactMutation, setContactMutation] = useState<ContactMutation>(initialState);
     const imageStyle = {
         background: `url(${contactMutation.image}) no-repeat center center / cover`,
         width: '100px',
         height: '100px',
     };
-
 
     const changeDish = (
         event: React.ChangeEvent<HTMLInputElement>,

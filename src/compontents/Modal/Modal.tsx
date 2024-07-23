@@ -1,10 +1,10 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../app/hooks';
 import ModalItem from './ModalItem';
-import { selectDeleteContentLoading } from '../../store/contactsSlice';
 import {deleteContact, fetchContacts} from '../../store/contactsThunks';
 import Spinner from '../Spinner/Spinner';
 import { Contact } from '../../types';
+import {selectDeleteContactLoading} from "../../store/contactsSlice";
 
 interface Props {
     show: boolean;
@@ -18,8 +18,7 @@ const Modal: React.FC<Props> = ({
     onClose,
 }) => {
     const dispatch = useAppDispatch();
-    const deleteLoading = useAppSelector(selectDeleteContentLoading);
-
+    const deleteLoading = useAppSelector(selectDeleteContactLoading);
     const removeContact = async (id: string) => {
         await dispatch(deleteContact(id));
         await dispatch(fetchContacts());
